@@ -3,7 +3,7 @@ name: Sync to Cloudflare R2
 on:
   push:
     branches:
-      - main
+      - main  # 你可以根据需要更改为你的默认分支名称
 
 jobs:
   sync:
@@ -27,6 +27,6 @@ jobs:
 
     - name: Sync repository to Cloudflare R2
       run: |
-        aws s3 sync . s3://${{ secrets.CLOUDFLARE_BUCKET_NAME }} --endpoint-url=https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        aws s3 sync . s3://${{ secrets.CLOUDFLARE_BUCKET_NAME }} --endpoint-url=https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com --delete --exclude ".git/*"
       env:
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
