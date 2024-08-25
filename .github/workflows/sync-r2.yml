@@ -2,7 +2,7 @@ name: Sync to Cloudflare R2
 
 on:
   schedule:
-    - cron: '40 3 * * *'  # 每天的03:40 UTC时间触发（相当于东八区的11:40）
+    - cron: '45 3 * * *'  # 每天的03:40 UTC时间触发（相当于东八区的11:45）
   workflow_dispatch:  # 允许手动触发
 
 jobs:
