@@ -1,9 +1,8 @@
 name: Sync to Cloudflare R2
 
 on:
-  push:
-    branches:
-      - main  # 你可以根据需要更改为你的默认分支名称
+  schedule:
+    - cron: '10 11 * * *'  # 每天的11:10 UTC时间触发（请注意这是UTC时间）
 
 jobs:
   sync:
