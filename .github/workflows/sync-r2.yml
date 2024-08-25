@@ -3,7 +3,7 @@ name: Sync to Cloudflare R2
 on:
   push:
     branches:
-      - main  # 你可以根据需要更改为你的默认分支名称
+      - main
 
 jobs:
   sync:
